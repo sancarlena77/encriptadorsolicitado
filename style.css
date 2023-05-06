@@ -25,6 +25,12 @@ body{
     top: 40px;
 }
 
+/*Formulario*/
+.formulario{
+    display: inline-block;
+}
+
+
 /* Caja de ingrese el texto aqui */
 
 .cajadetexto {
@@ -99,25 +105,25 @@ body{
 }
 
 .boton {
-box-sizing: border-box;
-display: inline-block;
-flex-direction: row;
-align-items: flex-start;
-padding: 24px;
-gap: 8px;
-width: 328px;
-height: 67px;
-border: 1px solid #0A3871;
-border-radius: 24px;
-flex: none;
-order: 1;
-flex-grow: 0;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
 
 }
 
