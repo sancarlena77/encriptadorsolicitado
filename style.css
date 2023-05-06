@@ -19,3 +19,23 @@
     left: 40px;
     top: 40px;
 }
+
+/* Caja de ingrese el texto aqui */
+
+.cajadetexto {
+    /*Apariencia de la caja*/
+    border-width: 0;
+    background: 000;
+    position: absolute;
+    width: 577px;
+    height: 48px;
+    left: 240px;
+    top: 168px;
+    /*texto interno*/
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+}
