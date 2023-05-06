@@ -1,4 +1,9 @@
 /* Encriptador - Desktop */
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
 .fondo-general {
     position: relative;
     width: 1440px;
