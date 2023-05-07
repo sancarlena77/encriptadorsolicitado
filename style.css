@@ -128,7 +128,7 @@ body{
 }
 
 #encriptar {
-    background: #0A3871
+    background: #0A3871;
     color: #FFFFFF;
 }
 
@@ -207,4 +207,12 @@ h2 {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
+}
+
+#copiar{ /*oculto en la primera etapa de recibir el input*/
+    width: 336px;
+    margin: 0 32px 32px 32px;
+    top: 885px;
+    position: fixed;
+    visibility:hidden;
 }
