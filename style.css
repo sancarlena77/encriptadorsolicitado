@@ -38,8 +38,9 @@ body{
     border-width: 0;
     background: 000;
     position: absolute;
-    width: 577px;
-    height: 48px;
+    width: 700px;
+    height: 577px;
+    resize: none;
     left: 240px;
     top: 168px;
     /*texto interno*/
@@ -108,9 +109,8 @@ body{
     box-sizing: border-box;
     display: inline-block;
     padding: 24px;
-    width: 700px;
-    height: 544px;
-    resize: none;
+    width: 328px;
+    height: 67px;
     border: 1px solid #0A3871;
     border-radius: 24px;
     font-family: 'Inter';
@@ -178,7 +178,7 @@ h2 {
 #mensaje-vacio{
     position: absolute;
     z-index:1;
-    visibility:visible;
+    visibility: visible;
 }
     
 #mensaje-procesado{

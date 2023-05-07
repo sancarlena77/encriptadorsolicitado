@@ -60,22 +60,22 @@
 
 <script>
 
-var textoIngresado = document.getElementById("textoIngresado");
+    var textoIngresado = document.getElementById("textoIngresado");
         
-        var encriptar = document.getElementById("encriptar")
-            encriptar.addEventListener("click", (event) => cargar(event)); //asegura que el evento del clic se pase como parámetro a la función cargar.
-    
-        var impresionParametros = document.getElementById("impresionParametros")
-        var htmlParametros = "";
-    
-        function cargar() {
-            event.preventDefault(); //Esto previene el envío del formulario y evita que la página se recargue.
-            var impresionParametros = document.getElementById("impresionParametros");
-            htmlParametros += "Excelente, hemos ingresado "+ textoIngresado.value;
-            impresionParametros.innerHTML = htmlParametros;
-            return (textoIngresado.value);
-            htmlParametros = "";
-        }
+    var encriptar = document.getElementById("encriptar");
+        encriptar.addEventListener("click", (event) => cargar(event)); //asegura que el evento del clic se pase como parámetro a la función cargar.
+
+    var impresionParametros = document.getElementById("impresionParametros")
+    var htmlParametros = "";
+
+    function cargar() {
+        htmlParametros = "";
+        event.preventDefault(); //Esto previene el envío del formulario y evita que la página se recargue.
+        var impresionParametros = document.getElementById("impresionParametros");
+        htmlParametros += "Excelente, hemos ingresado "+ textoIngresado.value;
+        impresionParametros.innerHTML = htmlParametros;
+        return (textoIngresado.value);
+    }
 
 
     
