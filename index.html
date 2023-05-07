@@ -37,18 +37,15 @@
             </form>
 
             <section class="caja-resultado">
-                <div id="impresionParametros"></div>
-                <br>
-                <br>
-
-                <div class="mensaje-resultado">
+                <div class="mensaje-resultado" id="mensaje-vacio">
                     <img src= "Imagenes/personaje.svg" alt="Joven masculino sentado con una lupa en su mano observando un diamante" class="personaje">
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p class="producto-descripcion">Ingresa el texto que desees encriptar o desencriptar.</p>    
                 </div>
-                
-                <input type="submit" name="copiar" id="copiar" value="Copiar texto" class="boton">
-
+                <div class="mensaje-resultado" id="mensaje-procesado">
+                    <div id="impresionParametros"></div>
+                    <input type="submit" name="copiar" id="copiar" value="Copiar texto" class="boton">
+                </div>               
             </section>
         
         </main>
@@ -77,6 +74,7 @@ var textoIngresado = document.getElementById("textoIngresado");
             htmlParametros += "Excelente, hemos ingresado "+ textoIngresado.value;
             impresionParametros.innerHTML = htmlParametros;
             return (textoIngresado.value);
+            htmlParametros = "";
         }
 
 
