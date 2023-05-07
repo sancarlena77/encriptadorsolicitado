@@ -37,15 +37,17 @@
             </form>
 
             <section class="caja-resultado">
+                <div id="impresionParametros"></div>
+                <br>
+                <br>
 
-                <img src= "Imagenes/personaje.svg" alt="Joven masculino sentado con una lupa en su mano observando un diamante" class="personaje">
                 <div class="mensaje-resultado">
+                    <img src= "Imagenes/personaje.svg" alt="Joven masculino sentado con una lupa en su mano observando un diamante" class="personaje">
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p class="producto-descripcion">Ingresa el texto que desees encriptar o desencriptar.</p>    
                 </div>
                 
                 <input type="submit" name="copiar" id="copiar" value="Copiar texto" class="boton">
-                
 
             </section>
         
@@ -61,7 +63,21 @@
 
 <script>
 
-
+var textoIngresado = document.getElementById("textoIngresado");
+        
+        var encriptar = document.getElementById("encriptar")
+            encriptar.addEventListener("click", (event) => cargar(event)); //asegura que el evento del clic se pase como parámetro a la función cargar.
+    
+        var impresionParametros = document.getElementById("impresionParametros")
+        var htmlParametros = "";
+    
+        function cargar() {
+            event.preventDefault(); //Esto previene el envío del formulario y evita que la página se recargue.
+            var impresionParametros = document.getElementById("impresionParametros");
+            htmlParametros += "Excelente, hemos ingresado "+ textoIngresado.value;
+            impresionParametros.innerHTML = htmlParametros;
+            return (textoIngresado.value);
+        }
 
 
     
