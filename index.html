@@ -65,8 +65,11 @@
     var encriptar = document.getElementById("encriptar");
         encriptar.addEventListener("click", (event) => cargar(event)); //asegura que el evento del clic se pase como parámetro a la función cargar.
 
-    var impresionParametros = document.getElementById("impresionParametros")
+    var impresionParametros = document.getElementById("impresionParametros");
     var htmlParametros = "";
+
+    var mensajeVacio = document.getElementById("mensaje-vacio");
+    var mensajeProcesado = document.getElementById("mensaje-procesado");
 
     function cargar() {
         htmlParametros = "";
@@ -74,6 +77,8 @@
         var impresionParametros = document.getElementById("impresionParametros");
         htmlParametros += "Excelente, hemos ingresado "+ textoIngresado.value;
         impresionParametros.innerHTML = htmlParametros;
+        mensajeVacio.style.display = "none";
+        mensajeProcesado.style.visibility = "visible";
         return (textoIngresado.value);
     }
 
