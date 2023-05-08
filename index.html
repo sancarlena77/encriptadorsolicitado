@@ -71,6 +71,14 @@
     var mensajeVacio = document.getElementById("mensaje-vacio");
     var mensajeProcesado = document.getElementById("mensaje-procesado");
 
+    var textoIngresado = document.getElementById("textoIngresado");
+        textoIngresado.addEventListener("focus", function() {
+            // Controlador de eventos para el enfoque (focus) del textarea, permite que se limpie el área cada vez que se haga clic
+            if (textoIngresado.value != "") {
+                    textoIngresado.value = "";
+            }
+        });
+
     function cargar() {
         htmlParametros = "";
         event.preventDefault(); //Esto previene el envío del formulario y evita que la página se recargue.
