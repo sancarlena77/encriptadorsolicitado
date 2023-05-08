@@ -206,3 +206,25 @@ h2 {
     display:block;
     overflow:auto;
 }
+
+footer{
+    text-align: center;
+    background: #0A3871;
+    padding:40px;
+}
+
+footer img{
+    height: 100px;
+}
+
+.copyright{
+    color:#FFFFFF;
+    font-size: 13px;
+    margin:20px;
+}
+
+.redes-logo{
+    width: 50px;
+    height: auto;
+    display: inline-block;
+}
