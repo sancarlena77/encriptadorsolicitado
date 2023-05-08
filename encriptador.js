@@ -18,7 +18,18 @@
                     textoIngresado.value = "";
             }
         });
-    
+
+
+    document.getElementById("textoIngresado").addEventListener("keypress",verificar); // Evento para cada tecla pulsada
+
+    function verificar(e) {
+        // comprobamos con una expresión regular que el caracter pulsado sea una letra minúscula o un espacio, si ponemos i después de / entonces no distingue entre mayúsculas y minúsculas.
+        if (e.key.match(/[a-zñ\s]/) === null) {
+            // Si la tecla pulsada no es la correcta, no la permite
+            e.preventDefault();
+        }
+    }
+
     function cargar() {
         if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "") {
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
