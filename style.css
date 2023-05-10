@@ -9,33 +9,26 @@ body{
 }
 
 .fondo-general {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
     background: #F3F5FC;
 }
 
-/* Logo - Auto layout*/
 .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-    position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 40px;
-    top: 40px;
+    margin: 48px 0 0 3.5px;
 }
 
 .contenedor-principal, .contenedor-piedepagina{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /*Formulario*/
-.formulario{
+.caja-formulario{
     display: inline-block;
+    width: 50%;
+    background: pink;
+    vertical-align: top;
+    margin: 3em 0 0 0;
 }
 
 
@@ -45,12 +38,9 @@ body{
     /*Apariencia de la caja*/
     border-width: 0;
     background: 000;
-    position: absolute;
-    width: 50%;
-    height: 677px;
+    width: 94%;
+    height: 277px;
     resize: none;
-    left: 240px;
-    top: 168px;
     /*texto interno*/
     font-family: 'Inter';
     font-style: normal;
@@ -58,6 +48,7 @@ body{
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+    padding: 3%;
 }
 
 .cajadetexto:hover{
@@ -66,26 +57,23 @@ body{
 
 /*Alerta de indicaciones*/
 
-.alerta {
+.caja-alerta {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 8px;
-
-    position: absolute;
-    width: 229px;
+    margin: 1em 0;
+    width: 50%;
     height: 18px;
-    left: 240px;
-    top: 851px;
-
 }
 
+.exclamacionalerta{
+    float: left;
+    margin: 0 1em 0 0;
+}
 
 .textoalerta{
-    width: 205px;
-    height: 18px;
-
+    display: inline-block;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -95,34 +83,20 @@ body{
     /* Gray/gray-400 */
     color: #495057;
     opacity: 0.8;
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 /*Botones de encriptar y desincriptar*/
 
 .botonera {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     padding: 0px;
-    gap: 24px;
-    
-    position: absolute;
-    width: 680px;
+    width: 100%;
     height: 67px;
-    left: 240px;
-    top: 885px;
 }
 
 .boton {
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 24px;
-    width: 328px;
-    height: 67px;
+    padding: 1em 0;
+    width: 40%;
+    height: auto;
     border: 1px solid #0A3871;
     border-radius: 24px;
     font-family: 'Inter';
@@ -132,6 +106,7 @@ body{
     line-height: 19px;
     text-align: center;
     transition: 500ms;
+    margin: 0 30%;
 
 }
 
@@ -142,38 +117,44 @@ body{
 #encriptar {
     background: #0A3871;
     color: #FFFFFF;
+    margin: 0 2em;
+}
+
+#desencriptar {
+    margin: 0;
 }
 
 .caja-resultado{
-    position: relative;
-    width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
-    background: #FFFFFF;
+    width: 30%;
+    height: 500px;
+    margin: 0 0 25px 10%;
+    background: yellow;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
+    display: inline-block;
+    float: right;
 }
 .personaje{
-    margin: 243px 0 0 0;
-    width: 336px;
-    height: 304px;
+    width: 70%;
+    height: auto;
+    margin: 2em 15%;
 }
 
 .mensaje-resultado{
-
     padding: 0px;
-    width: 336px;
-    margin: 32px 32px 0 32px;}
+    width: 27%;
+    margin: 32px 0 0 0;}
 
 h2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 120%;
     text-align: center;
     color: #343A40;
+    width: 90%;
+    margin: 0 5%;
 }
 
 .mensaje-resultado p{
@@ -183,13 +164,9 @@ h2 {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    margin: 16px 0 0 0;
+    margin: 1em 2em;
     text-align: center;
     color: #495057;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
 }
 
 #mensaje-vacio{
@@ -206,34 +183,66 @@ h2 {
 }
 
 #copiar{
-    width: 336px;
+    margin: 0 10%;
+    width: 80%;
 }
 
 #impresionParametros {
-    width: 240px;
-    height: 410px;
+    width: 80%;
+    height: 380px;
     font-size: 20px;
+    margin: 0 10%;
 }
+
 
 footer{
-    text-align: center;
     background: #0A3871;
-    padding:40px;
+    padding:10px;
     width: 100%;
+    vertical-align: top;
 }
 
-footer img{
-    height: 100px;
+.hechopor{
+    vertical-align: top;
+    height: auto;
+    width: 40%;
+    display: inline-block;
+    margin: 1em 0 0 0;
+    float: left;
+}
+
+.hechopor img{
+    vertical-align: top;
+    height: auto;
+    width: 7%;
+    display: inline-block;
+    float: left;
+    margin: 0 1em 1em 0;
 }
 
 .copyright{
     color:#FFFFFF;
     font-size: 13px;
-    margin:20px;
+    margin:1em 1em;
+    text-align: left;
+}
+
+.seguime{
+    display: inline-block;
+    margin: 0 0 0 37%;
+}
+
+.seguime p{
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+
+.botonesredes{
+    margin: 0 15%;
 }
 
 .redes-logo{
-    width: 50px;
+    width: 35px;
     height: auto;
     display: inline-block;
 }
