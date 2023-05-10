@@ -22,50 +22,53 @@
         </header>
 
         <main>
-            
-            <form class="formulario">
-            
-                <textarea cols="70" rows="10" id="textoIngresado" class="cajadetexto" required>Ingrese el texto aquí</textarea>
-                <section class="alerta">
-                    <img src="Imagenes/exclamacion.svg" class="exclamacionalerta"><legend class="textoalerta">Solo letras minúsculas y sin acentos</legend>
-                </section>
-
-                <section class="botonera">
-                    <input type="submit" name="encriptar"  value="Encriptar" id="encriptar" class="boton">
-                    <input type="submit" name="desencriptar" id="desencriptar" value="Desencriptar" class="boton">
-                </section>
+            <div class="contenedor-principal">
+                <div class="formulario">
+                    <form>
                 
-            </form>
-
-            <section class="caja-resultado">
-                <div class="mensaje-resultado" id="mensaje-vacio">
-                    <img src= "Imagenes/personaje.svg" alt="Joven masculino sentado con una lupa en su mano observando un diamante" class="personaje">
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p class="producto-descripcion">Ingresa el texto que desees encriptar o desencriptar.</p>    
-                </div>
-                <div class="mensaje-resultado" id="mensaje-procesado">
-                    <div id="impresionParametros"></div>
-                    <input type="submit" name="copiar" id="copiar" value="Copiar texto" class="boton">
-                </div>               
-            </section>
+                        <textarea cols="70" rows="10" id="textoIngresado" class="cajadetexto" required>Ingrese el texto aquí</textarea>
+                        <section class="alerta">
+                            <img src="Imagenes/exclamacion.svg" class="exclamacionalerta"><legend class="textoalerta">Solo letras minúsculas y sin acentos</legend>
+                        </section>
         
+                        <section class="botonera">
+                            <input type="submit" name="encriptar"  value="Encriptar" id="encriptar" class="boton">
+                            <input type="submit" name="desencriptar" id="desencriptar" value="Desencriptar" class="boton">
+                        </section>
+                        
+                    </form>
+                </div>
+    
+                <section class="caja-resultado">
+                    <div class="mensaje-resultado" id="mensaje-vacio">
+                        <img src= "Imagenes/personaje.svg" alt="Joven masculino sentado con una lupa en su mano observando un diamante" class="personaje">
+                        <h2>Ningún mensaje fue encontrado</h2>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>    
+                    </div>
+                    <div class="mensaje-resultado" id="mensaje-procesado">
+                        <div id="impresionParametros"></div>
+                        <input type="submit" name="copiar" id="copiar" value="Copiar texto" class="boton">
+                    </div>               
+                </section>  
+            </div>   
         </main>
 
         <footer> 
-            <div>
-                <div>
+            <div class="contenedor-piedepagina">
+                <div class="hechopor">
                     <img src="Imagenes/logo-heidy-livelongandprosper.png" alt="Logo color blanco con una mezcla entre una H y la mano con el símbolo de live long and prosper">
-                    <p class="copyright"> &copy Derechos reservados, 2023.</p> <p class="copyright">Hecho por Heidy Murillo Quesada para Alura Latam</p>
+                    <p class="copyright"> &copy Derechos reservados, 2023.</p> 
+                    <p class="copyright">Hecho por Heidy Murillo Quesada para Alura Latam</p>
                 </div>
-                <p class="copyright"> Seguime en redes sociales </p>
-                <div class="botonesredes">
-                    <a title="LinkedIn" href="https://www.linkedin.com/in/sancarlena77/"><img src="Imagenes/iconmonstr-linkedin-5.svg" class="redes-logo"></a>
-                    <a title="GitHub" href="https://github.com/sancarlena77/"><img src="Imagenes/iconmonstr-github-5.svg" class="redes-logo"></a>
-                    <a title="Twitter" href="https://twitter.com/sancarlena77/"><img src="Imagenes/iconmonstr-twitter-5.svg" class="redes-logo"></a>
+                <div class="seguime">
+                    <p class="copyright"> Seguime en redes sociales </p>
+                    <div class="botonesredes">
+                        <a title="LinkedIn" href="https://www.linkedin.com/in/sancarlena77/"><img src="Imagenes/iconmonstr-linkedin-5.svg" class="redes-logo"></a>
+                        <a title="GitHub" href="https://github.com/sancarlena77/"><img src="Imagenes/iconmonstr-github-5.svg" class="redes-logo"></a>
+                        <a title="Twitter" href="https://twitter.com/sancarlena77/"><img src="Imagenes/iconmonstr-twitter-5.svg" class="redes-logo"></a>
+                    </div>
                 </div>
-
             </div>
-
         </footer>
         
         <script src="encriptador.js"></script>
