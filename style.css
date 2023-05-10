@@ -1,4 +1,8 @@
-/* Encriptador - Desktop */
+/*
+❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚
+D E S K T O P 
+❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚
+*/
 
 body{
     font-family: 'Inter', sans-serif;
@@ -38,8 +42,8 @@ body{
     border-width: 0;
     background: 000;
     position: absolute;
-    width: 700px;
-    height: 577px;
+    width: 50%;
+    height: 677px;
     resize: none;
     left: 240px;
     top: 168px;
@@ -50,6 +54,10 @@ body{
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+}
+
+.cajadetexto:hover{
+    box-shadow: inset 2px 2px 2px 2px #495057;
 }
 
 /*Alerta de indicaciones*/
@@ -211,6 +219,7 @@ footer{
     text-align: center;
     background: #0A3871;
     padding:40px;
+    width: 100%;
 }
 
 footer img{
