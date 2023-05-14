@@ -5,6 +5,9 @@
     var encriptar = document.getElementById("encriptar");
         encriptar.addEventListener("click", (event) => encriptarTexto(event)); //asegura que el evento del clic se pase como parámetro a la función encriptarTexto.
 
+    var desencriptar = document.getElementById("desencriptar");
+        desencriptar.addEventListener("click", (event) => desencriptarTexto(event)); 
+
     var impresionParametros = document.getElementById("impresionParametros");
     var htmlParametros = "";
 
@@ -24,8 +27,8 @@
 
     var textoEncriptado = "";
     var textoDesencriptado = "";
-    var cuenta;
-    var cuentaArreglo;
+    var cuenta = 0;
+    var cuentaArreglo = 0;
     var encontrado = false;
 
     const sustituto = ["ai", "enter", "imes", "ober", "ufat"];
@@ -66,3 +69,21 @@
         mensajeVacio.style.display = "none";
         mensajeProcesado.style.visibility = "visible";
     }
+
+    function desencriptarTexto (texto){
+        cargar();
+        textoEncriptado = textoIngresado.value;
+        while (cuentaArreglo < original.length) {
+            if (textoEncriptado.indexOf(sustituto[cuentaArreglo]) != -1) {
+                textoEncriptado = textoEncriptado.replace(sustituto[cuentaArreglo],original[cuentaArreglo]); 
+            } else {
+                cuentaArreglo++;
+            }
+        }
+        htmlParametros = "";
+        var impresionParametros = document.getElementById("impresionParametros");
+        htmlParametros += "Su texto desencriptado es: "+ textoEncriptado;
+        impresionParametros.innerHTML = htmlParametros;
+        mensajeVacio.style.display = "none";
+        mensajeProcesado.style.visibility = "visible";
+    }   
