@@ -8,6 +8,9 @@
     var desencriptar = document.getElementById("desencriptar");
         desencriptar.addEventListener("click", (event) => desencriptarTexto(event)); 
 
+    var copiar = document.getElementById("copiar");
+    copiar.addEventListener("click", (event) => copiarTexto()); 
+
     var impresionParametros = document.getElementById("impresionParametros");
     var htmlParametros = "";
 
@@ -26,7 +29,6 @@
     document.getElementById("textoIngresado").addEventListener("keypress",verificar); // Evento para cada tecla pulsada
 
     var textoEncriptado = "";
-    var textoDesencriptado = "";
     var cuenta = 0;
     var cuentaArreglo = 0;
     var encontrado = false;
@@ -87,3 +89,12 @@
         mensajeVacio.style.display = "none";
         mensajeProcesado.style.visibility = "visible";
     }   
+
+    function copiarTexto(elemento) {
+        const inputOculto = document.createElement ('input');
+        inputOculto.setAttribute('value', textoEncriptado);
+        document.body.appendChild(inputOculto);
+        inputOculto.select();
+        document.execCommand('copy');
+        document.body.removeChild(inputOculto);
+      } 
