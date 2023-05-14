@@ -44,10 +44,14 @@
         }
     }
 
-    function cargar(event) {
+    function cargar() {
         if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "") {
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
         }
+        cuenta = 0;
+        cuentaArreglo = 0;
+        textoEncriptado = "";
+        encontrado = false;
     } 
 
     function encriptarTexto (texto){
@@ -90,7 +94,7 @@
         mensajeProcesado.style.visibility = "visible";
     }   
 
-    function copiarTexto(elemento) {
+    function copiarTexto() {
         const inputOculto = document.createElement ('input');
         inputOculto.setAttribute('value', textoEncriptado);
         document.body.appendChild(inputOculto);
