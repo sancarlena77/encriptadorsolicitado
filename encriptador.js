@@ -22,8 +22,8 @@
 
     document.getElementById("textoIngresado").addEventListener("keypress",verificar); // Evento para cada tecla pulsada
 
-    var textoEncriptado="";
-    var textoDesencriptado="";
+    var textoEncriptado = "";
+    var textoDesencriptado = "";
     var cuenta;
     var cuentaArreglo;
     var encontrado = false;
@@ -47,16 +47,16 @@
 
     function encriptarTexto (texto){
         cargar();
-        for (cuenta=0; cuenta < textoIngresado.value.length; cuenta++) {
-            encontrado=false;
-            for (cuentaArreglo=0; cuentaArreglo < 5; cuentaArreglo++) {
+        for (cuenta = 0; cuenta < textoIngresado.value.length; cuenta++) {
+            encontrado = false;
+            for (cuentaArreglo = 0; cuentaArreglo < original.length; cuentaArreglo++) {
                 if (textoIngresado.value[cuenta] == original[cuentaArreglo]) {
                     encontrado = true;
                     textoEncriptado = textoEncriptado + sustituto[cuentaArreglo];
                 }
             }
-            if (encontrado==false){
-                textoEncriptado= textoEncriptado + textoIngresado.value[cuenta];
+            if (encontrado == false){
+                textoEncriptado = textoEncriptado + textoIngresado.value[cuenta];
             }  
         }
         htmlParametros = "";
