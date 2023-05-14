@@ -28,7 +28,7 @@
 
     document.getElementById("textoIngresado").addEventListener("keypress",verificar); // Evento para cada tecla pulsada
 
-    var textoEncriptado = "";
+    var textoProcesado = "";
     var cuenta = 0;
     var cuentaArreglo = 0;
     var encontrado = false;
@@ -50,7 +50,7 @@
         }
         cuenta = 0;
         cuentaArreglo = 0;
-        textoEncriptado = "";
+        textoProcesado = "";
         encontrado = false;
     } 
 
@@ -61,16 +61,16 @@
             for (cuentaArreglo = 0; cuentaArreglo < original.length; cuentaArreglo++) {
                 if (textoIngresado.value[cuenta] == original[cuentaArreglo]) {
                     encontrado = true;
-                    textoEncriptado = textoEncriptado + sustituto[cuentaArreglo];
+                    textoProcesado = textoProcesado + sustituto[cuentaArreglo];
                 }
             }
             if (encontrado == false){
-                textoEncriptado = textoEncriptado + textoIngresado.value[cuenta];
+                textoProcesado = textoProcesado + textoIngresado.value[cuenta];
             }  
         }
         htmlParametros = "";
         var impresionParametros = document.getElementById("impresionParametros");
-        htmlParametros += "Su texto encriptado es: "+ textoEncriptado;
+        htmlParametros += "Su texto encriptado es: "+ textoProcesado;
         impresionParametros.innerHTML = htmlParametros;
         mensajeVacio.style.display = "none";
         mensajeProcesado.style.visibility = "visible";
@@ -78,17 +78,17 @@
 
     function desencriptarTexto (texto){
         cargar();
-        textoEncriptado = textoIngresado.value;
+        textoProcesado = textoIngresado.value;
         while (cuentaArreglo < original.length) {
-            if (textoEncriptado.indexOf(sustituto[cuentaArreglo]) != -1) {
-                textoEncriptado = textoEncriptado.replace(sustituto[cuentaArreglo],original[cuentaArreglo]); 
+            if (textoProcesado.indexOf(sustituto[cuentaArreglo]) != -1) {
+                textoProcesado = textoProcesado.replace(sustituto[cuentaArreglo],original[cuentaArreglo]); 
             } else {
                 cuentaArreglo++;
             }
         }
         htmlParametros = "";
         var impresionParametros = document.getElementById("impresionParametros");
-        htmlParametros += "Su texto desencriptado es: "+ textoEncriptado;
+        htmlParametros += "Su texto desencriptado es: "+ textoProcesado;
         impresionParametros.innerHTML = htmlParametros;
         mensajeVacio.style.display = "none";
         mensajeProcesado.style.visibility = "visible";
@@ -96,7 +96,7 @@
 
     function copiarTexto() {
         const inputOculto = document.createElement ('input');
-        inputOculto.setAttribute('value', textoEncriptado);
+        inputOculto.setAttribute('value', textoProcesado);
         document.body.appendChild(inputOculto);
         inputOculto.select();
         document.execCommand('copy');
