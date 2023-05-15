@@ -56,6 +56,7 @@ var textoIngresado = document.getElementById("textoIngresado");
     }
 
     function cargar() {
+        continuarProcesamiento = true;
         if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "" || !/[a-zñ]/i.test(textoIngresado.value) ){
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
             textoIngresado.focus();
