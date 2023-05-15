@@ -47,7 +47,7 @@
     }
 
     function verificarPegado(texto){
-        if(permitidos.test(texto) )
+        if(permitidos.test(texto))
           {
            return true;
           }
@@ -58,7 +58,7 @@
     }
 
     function cargar() {
-        if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "") {
+        if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "" || !/^\s+$/.test(textoIngresado.value)) {
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
             textoIngresado.focus();
             continuarProcesamiento = false;
