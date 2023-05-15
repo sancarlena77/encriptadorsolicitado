@@ -1,6 +1,6 @@
 
 
-    var textoIngresado = document.getElementById("textoIngresado");
+var textoIngresado = document.getElementById("textoIngresado");
     var permitidos = /^[a-zñ\s]+$/;
     var continuarProcesamiento = true;
         
@@ -47,18 +47,16 @@
     }
 
     function verificarPegado(texto){
-        if(permitidos.test(texto))
-          {
+        
+        if(permitidos.test(texto)) {
            return true;
-          }
-        else
-          {
+        } else {
           return false;
-          }
+        }
     }
 
     function cargar() {
-        if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "" || !/^\s+$/.test(textoIngresado.value)) {
+        if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "" || !/[a-zñ]/i.test(textoIngresado.value) ){
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
             textoIngresado.focus();
             continuarProcesamiento = false;
