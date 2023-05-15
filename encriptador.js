@@ -1,6 +1,8 @@
 
 
     var textoIngresado = document.getElementById("textoIngresado");
+    var permitidos = /^[a-zñ\s]+$/;
+    var continuarProcesamiento = true;
         
     var encriptar = document.getElementById("encriptar");
         encriptar.addEventListener("click", (event) => encriptarTexto(event)); //asegura que el evento del clic se pase como parámetro a la función encriptarTexto.
@@ -9,7 +11,7 @@
         desencriptar.addEventListener("click", (event) => desencriptarTexto(event)); 
 
     var copiar = document.getElementById("copiar");
-    copiar.addEventListener("click", (event) => copiarTexto()); 
+        copiar.addEventListener("click", (event) => copiarTexto()); 
 
     var impresionParametros = document.getElementById("impresionParametros");
     var htmlParametros = "";
@@ -26,7 +28,7 @@
         });
 
 
-    document.getElementById("textoIngresado").addEventListener("keypress",verificar); // Evento para cada tecla pulsada
+    document.getElementById("textoIngresado").addEventListener("keypress",verificarDigitado); // Evento para cada tecla pulsada
 
     var textoProcesado = "";
     var cuenta = 0;
@@ -36,17 +38,34 @@
     const sustituto = ["ai", "enter", "imes", "ober", "ufat"];
     const original = ["a", "e", "i", "o", "u"];
     
-    function verificar(e) {
+    function verificarDigitado(e) {
         // comprobamos con una expresión regular que el caracter pulsado sea una letra minúscula o un espacio, si ponemos i después de / entonces no distingue entre mayúsculas y minúsculas.
-        if (e.key.match(/[a-zñ\s]/) === null) {
+        if (e.key.match(permitidos) === null) {
             // Si la tecla pulsada no es la correcta, no la permite
             e.preventDefault();
-        }
+        } 
+    }
+
+    function verificarPegado(texto){
+        if(permitidos.test(texto) )
+          {
+           return true;
+          }
+        else
+          {
+          return false;
+          }
     }
 
     function cargar() {
         if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "") {
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
+            textoIngresado.focus();
+            continuarProcesamiento = false;
+        } else if (verificarPegado (textoIngresado.value) == false) {
+            alert("Solamente se permiten letras minúsculas sin acentos");
+            textoIngresado.focus()
+            continuarProcesamiento = false;
         }
         cuenta = 0;
         cuentaArreglo = 0;
@@ -56,42 +75,50 @@
 
     function encriptarTexto (texto){
         cargar();
-        for (cuenta = 0; cuenta < textoIngresado.value.length; cuenta++) {
-            encontrado = false;
-            for (cuentaArreglo = 0; cuentaArreglo < original.length; cuentaArreglo++) {
-                if (textoIngresado.value[cuenta] == original[cuentaArreglo]) {
-                    encontrado = true;
-                    textoProcesado = textoProcesado + sustituto[cuentaArreglo];
+        if (continuarProcesamiento) {
+            for (cuenta = 0; cuenta < textoIngresado.value.length; cuenta++) {
+                encontrado = false;
+                for (cuentaArreglo = 0; cuentaArreglo < original.length; cuentaArreglo++) {
+                    if (textoIngresado.value[cuenta] == original[cuentaArreglo]) {
+                        encontrado = true;
+                        textoProcesado = textoProcesado + sustituto[cuentaArreglo];
+                    }
                 }
+                if (encontrado == false){
+                    textoProcesado = textoProcesado + textoIngresado.value[cuenta];
+                }  
             }
-            if (encontrado == false){
-                textoProcesado = textoProcesado + textoIngresado.value[cuenta];
-            }  
-        }
-        htmlParametros = "";
-        var impresionParametros = document.getElementById("impresionParametros");
-        htmlParametros += "Su texto encriptado es: "+ textoProcesado;
-        impresionParametros.innerHTML = htmlParametros;
-        mensajeVacio.style.display = "none";
-        mensajeProcesado.style.visibility = "visible";
+            htmlParametros = "";
+            var impresionParametros = document.getElementById("impresionParametros");
+            htmlParametros += "Su texto encriptado es: "+ textoProcesado;
+            impresionParametros.innerHTML = htmlParametros;
+            mensajeVacio.style.display = "none";
+            mensajeProcesado.style.visibility = "visible";
+        } else {
+            textoIngresado.focus();
+        }       
     }
 
     function desencriptarTexto (texto){
         cargar();
-        textoProcesado = textoIngresado.value;
-        while (cuentaArreglo < original.length) {
-            if (textoProcesado.indexOf(sustituto[cuentaArreglo]) != -1) {
-                textoProcesado = textoProcesado.replace(sustituto[cuentaArreglo],original[cuentaArreglo]); 
-            } else {
-                cuentaArreglo++;
+        if (continuarProcesamiento) {
+            textoProcesado = textoIngresado.value;
+            while (cuentaArreglo < original.length) {
+                if (textoProcesado.indexOf(sustituto[cuentaArreglo]) != -1) {
+                    textoProcesado = textoProcesado.replace(sustituto[cuentaArreglo],original[cuentaArreglo]); 
+                } else {
+                    cuentaArreglo++;
+                }
             }
+            htmlParametros = "";
+            var impresionParametros = document.getElementById("impresionParametros");
+            htmlParametros += "Su texto desencriptado es: "+ textoProcesado;
+            impresionParametros.innerHTML = htmlParametros;
+            mensajeVacio.style.display = "none";
+            mensajeProcesado.style.visibility = "visible";
+        } else {
+            textoIngresado.focus();
         }
-        htmlParametros = "";
-        var impresionParametros = document.getElementById("impresionParametros");
-        htmlParametros += "Su texto desencriptado es: "+ textoProcesado;
-        impresionParametros.innerHTML = htmlParametros;
-        mensajeVacio.style.display = "none";
-        mensajeProcesado.style.visibility = "visible";
     }   
 
     function copiarTexto() {
