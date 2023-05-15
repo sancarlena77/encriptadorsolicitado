@@ -1,6 +1,4 @@
-
-
-var textoIngresado = document.getElementById("textoIngresado");
+    var textoIngresado = document.getElementById("textoIngresado");
     var permitidos = /^[a-zñ\s]+$/;
     var continuarProcesamiento = true;
         
@@ -27,8 +25,7 @@ var textoIngresado = document.getElementById("textoIngresado");
             }
         });
 
-
-    document.getElementById("textoIngresado").addEventListener("keypress",verificarDigitado); // Evento para cada tecla pulsada
+    document.getElementById("textoIngresado").addEventListener("keypress",validarFrontEnd); // Evento para cada tecla pulsada
 
     var textoProcesado = "";
     var cuenta = 0;
@@ -38,7 +35,7 @@ var textoIngresado = document.getElementById("textoIngresado");
     const sustituto = ["ai", "enter", "imes", "ober", "ufat"];
     const original = ["a", "e", "i", "o", "u"];
     
-    function verificarDigitado(e) {
+    function validarFrontEnd(e) {
         // comprobamos con una expresión regular que el caracter pulsado sea una letra minúscula o un espacio, si ponemos i después de / entonces no distingue entre mayúsculas y minúsculas.
         if (e.key.match(permitidos) === null) {
             // Si la tecla pulsada no es la correcta, no la permite
@@ -46,8 +43,7 @@ var textoIngresado = document.getElementById("textoIngresado");
         } 
     }
 
-    function verificarPegado(texto){
-        
+    function validarBackEnd(texto){
         if(permitidos.test(texto)) {
            return true;
         } else {
@@ -56,11 +52,12 @@ var textoIngresado = document.getElementById("textoIngresado");
     }
 
     function cargar() {
+        continuarProcesamiento = true;
         if (textoIngresado.value == "Ingrese el texto aquí" || textoIngresado.value == "" || !/[a-zñ]/i.test(textoIngresado.value) ){
             alert("No ha ingresado su texto, por favor inténtelo de nuevo");
             textoIngresado.focus();
             continuarProcesamiento = false;
-        } else if (verificarPegado (textoIngresado.value) == false) {
+        } else if (validarBackEnd (textoIngresado.value) == false) {
             alert("Solamente se permiten letras minúsculas sin acentos");
             textoIngresado.focus()
             continuarProcesamiento = false;
