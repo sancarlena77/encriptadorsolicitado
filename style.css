@@ -190,6 +190,8 @@ h2 {
     height: 380px;
     font-size: 20px;
     margin: 0 10%;
+    overflow: auto;
+
 }
 
 
