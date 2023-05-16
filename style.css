@@ -190,6 +190,8 @@ h2 {
     height: 380px;
     font-size: 20px;
     margin: 0 10%;
+    overflow: auto;
+
 }
 
 
@@ -414,7 +416,6 @@ M O B I L E
         width: 90%;
         height: 150px;
         margin: 1em 5%;
-        background: #0A3871;
     }
     #copiar {
         margin: 0 10%;
